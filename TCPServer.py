@@ -57,7 +57,7 @@ def switch(cap):
     else:
        return capitalizedSentence
 
-
+#a
 
 while 1:
 	connectionSocket, addr = severSocket.accept()
