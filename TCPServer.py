@@ -50,7 +50,7 @@ def switch(cap):
         return convert 
 
     elif cap == "CLOSE":
-         return severSocket.close()
+        severSocket.close()
          
         
 
@@ -61,19 +61,20 @@ def switch(cap):
 
 while 1:
 	connectionSocket, addr = severSocket.accept()
+
 	print("Se estableció la conexion")
+
 	print(addr)
 
 	sentence = connectionSocket.recv(1024)
 	
-	capitalizedSentence = sentence.decode()
+	capitalizedSentence = sentence.decode().upper()
 
 	capitalizedSentence = switch(capitalizedSentence)
 	
 	connectionSocket.send(capitalizedSentence.encode())
-	# connectionSocket.close()
 
-
+	connectionSocket.close()
 
 
 # 	with open(filename, "rb") as file:
