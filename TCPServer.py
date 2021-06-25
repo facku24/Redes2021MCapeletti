@@ -75,7 +75,7 @@ while 1:
 	
 	connectionSocket.send(capitalizedSentence.encode())
 
-	connectionSocket.close()
+	#connectionSocket.close()
 
 
 # 	with open(filename, "rb") as file:
