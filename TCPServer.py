@@ -48,6 +48,7 @@ def switch(cap):
         valor =  os.stat(archivo)
         convert = str(valor)
         return convert 
+        #s
 
     elif cap == "CLOSE":
         severSocket.close()
