@@ -58,9 +58,10 @@ def switch(cap):
        return capitalizedSentence
 
 #a
+connectionSocket, addr = severSocket.accept()
 
 while 1:
-	connectionSocket, addr = severSocket.accept()
+	
 
 	print("Se estableció la conexion")
 

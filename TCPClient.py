@@ -12,11 +12,11 @@ def createSocket(serverAdress, serverPortt):
 
     return clientSocket
 
-
+clientSocket = createSocket(serverName, serverPort)
 
 
 while 1:
-    clientSocket = createSocket(serverName, serverPort)
+    
     # data = receive_data(socket)
     # sentence = switch()
 
