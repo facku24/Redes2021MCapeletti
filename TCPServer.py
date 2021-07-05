@@ -6,8 +6,8 @@ serverName = '127.0.0.1'
 serverPort = 12000
 
 # filename = "file.txt"
-archivo = "F:/ITSC/Redes/TP1/carpeta/a.txt"
-filename = "F:/ITSC/Redes/TP1/carpeta/a.txt"
+archivo = "D:/ITSC/REDES/Laboratorios/Redes2021MCapeletti/carpeta/a.txt"
+filename = "D:/ITSC/REDES/Laboratorios/Redes2021MCapeletti/carpeta/a.txt"
 one_conection_only = (True)
 
 def createSocket(serverAdress, serverPortt):

@@ -21,7 +21,9 @@ while 1:
     # sentence = switch()
 
     sentence = input('Input lowercase sentence:')
-
+    if sentence == "CLOSE":
+        clientSocket.send(sentence.encode())
+        connectionSocket.close()
     clientSocket.send(sentence.encode())
 
     # clientSocket.sendfile("F:\ITSC\3ERAÑO\Redes\TP1\Nuevacarpeta.txt")
