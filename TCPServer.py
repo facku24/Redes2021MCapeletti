@@ -51,7 +51,7 @@ def switch(cap):
         #s
 
     elif cap == "CLOSE":
-        severSocket.close()
+        connectionSocket.close()
          
         
 
@@ -72,7 +72,11 @@ while 1:
 	
 	capitalizedSentence = sentence.decode().upper()
 
+
+
 	capitalizedSentence = switch(capitalizedSentence)
+
+
 	
 	connectionSocket.send(capitalizedSentence.encode())
 
