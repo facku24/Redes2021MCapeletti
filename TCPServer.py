@@ -55,6 +55,8 @@ def switch(cap):
 
 connectionSocket, addr = severSocket.accept()
 
+
+
 while 1:
 	
 
@@ -65,12 +67,13 @@ while 1:
         sentence = connectionSocket.recv(1024)
         
         capitalizedSentence = sentence.decode().upper()
+
         if capitalizedSentence == "CLOSE":
             
             capitalizedSentence = switch(capitalizedSentence)
             connectionSocket.send(capitalizedSentence.encode())
             connectionSocket.close()
-            print("usted cerro la conexion del servidor")
+            print("se cerro la conexion del servidor")
             break
 
            

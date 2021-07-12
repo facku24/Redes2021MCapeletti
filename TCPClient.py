@@ -15,6 +15,10 @@ def createSocket(serverAdress, serverPortt):
 
 clientSocket = createSocket(serverName, serverPort)
 
+def envio():
+        clientSocket.send(sentence.encode())
+        modifiedSentence = clientSocket.recv(1024)
+        print('From Server: ' + modifiedSentence.decode()) 
 
 while 1:
     
@@ -22,19 +26,16 @@ while 1:
  
     sentence = input('Input lowercase sentence:')
     
+
     
     if sentence == "close":
-        clientSocket.send(sentence.encode())
-        modifiedSentence = clientSocket.recv(1024)
-        print('From Server: ' + modifiedSentence.decode())
+        envio()
         clientSocket.close()
-        print("usted cerro la conexion del cliente")
+        print("se cerro la conexion del cliente")
         break 
     
     else:
-        clientSocket.send(sentence.encode())
-        modifiedSentence = clientSocket.recv(1024)
-        print('From Server: ' + modifiedSentence.decode()) 
+        envio()
     
 
 
