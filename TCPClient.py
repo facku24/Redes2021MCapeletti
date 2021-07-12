@@ -1,5 +1,6 @@
 from socket import *
 import os
+#d
 
 serverName = '127.0.0.1'
 serverPort = 12000
