@@ -48,37 +48,36 @@ def switch(cap):
         valor =  os.stat(archivo)
         convert = str(valor)
         return convert 
-        #s
-
-    elif cap == "CLOSE":
-        connectionSocket.close()
-         
-        
-
+     
     else:
        return capitalizedSentence
 
-#a
+
 connectionSocket, addr = severSocket.accept()
 
 while 1:
 	
 
-	print("Se estableció la conexion")
+        print("Se estableció la conexion")
 
-	print(addr)
+        print(addr)
 
-	sentence = connectionSocket.recv(1024)
-	
-	capitalizedSentence = sentence.decode().upper()
+        sentence = connectionSocket.recv(1024)
+        
+        capitalizedSentence = sentence.decode().upper()
+        if capitalizedSentence == "CLOSE":
+            
+            capitalizedSentence = switch(capitalizedSentence)
+            connectionSocket.send(capitalizedSentence.encode())
+            connectionSocket.close()
+            print("usted cerro la conexion del servidor")
+            break
 
-
-
-	capitalizedSentence = switch(capitalizedSentence)
-
-
-	
-	connectionSocket.send(capitalizedSentence.encode())
+           
+        else:
+             capitalizedSentence = switch(capitalizedSentence)
+             connectionSocket.send(capitalizedSentence.encode())
+        
 
 	#connectionSocket.close()
 

@@ -18,23 +18,31 @@ clientSocket = createSocket(serverName, serverPort)
 while 1:
     
     # data = receive_data(socket)
-    # sentence = switch()
-
+ 
     sentence = input('Input lowercase sentence:')
-    clientSocket.send(sentence.encode())
-
-    if sentence == "CLOSE":
+    
+    
+    if sentence == "close":
+        clientSocket.send(sentence.encode())
+        modifiedSentence = clientSocket.recv(1024)
+        print('From Server: ' + modifiedSentence.decode())
         clientSocket.close()
+        print("usted cerro la conexion del cliente")
+        break 
+    
+    else:
+        clientSocket.send(sentence.encode())
+        modifiedSentence = clientSocket.recv(1024)
+        print('From Server: ' + modifiedSentence.decode()) 
+    
 
-    # clientSocket.sendfile("F:\ITSC\3ERAÑO\Redes\TP1\Nuevacarpeta.txt")
-    modifiedSentence = clientSocket.recv(1024)
 
-    print('From Server: ' + modifiedSentence.decode())
+        
     
 
 
 
-# clientSocket.close()
+
 
 
 
